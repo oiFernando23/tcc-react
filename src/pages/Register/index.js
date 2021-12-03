@@ -30,7 +30,7 @@ export default function Register() {
         <div className="register-container">
             <div className="content">
                 <section>
-                    <img src={logoText} alt="My body My art" style={{ marginLeft: -100 }} />
+                    <img className="img" src={logoText} alt="My body My art" style={{ marginLeft: -100 }} />
                     <h1>Cadastro</h1>
                     <p>Faça seu cadastro</p>
 

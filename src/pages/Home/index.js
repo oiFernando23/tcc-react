@@ -1,25 +1,66 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {FiPower} from 'react-icons/fi';
+import React from "react";
 
-import "./styles.css"
+import "./styles.css";
 
-import logoTxt from '../../assets/logoText.png';
+import Default from "../../components/default";
 
-export default function Home(){
-    return(
-        <div className="home-container">
-            <header>
-                <img src={logoTxt} alt="MyBodyMyArt"/>
-                <span>Bem vindo!</span>
-                <Link className="button" to="/posts/new">Faça um post</Link>
-                <button type="button">
-                    <FiPower size={18} color="#2C2A29"/>
-                </button>
-            </header>
-            <div className="posts">
-                
-            </div>
-        </div>
-    );
+export default function Home() {
+  return (
+    <div>
+      {/* Quando tu precisar fazer alguma página como a home, com a sidebar, header e conteúdo scrollavel, 
+      usa o componente "default" e coloca o conteúdo scrollavel dentro dele. Já está configurado para vir com sidebar e header */}
+      <Default>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <h3>post</h3>
+        <div className="posts"></div>
+      </Default>
+    </div>
+  );
 }

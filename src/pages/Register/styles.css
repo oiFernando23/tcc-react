@@ -3,7 +3,6 @@
     max-width: 1120px;
     height: 100vh;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,4 +42,15 @@
 }
 .register-container .content form .input-group input + input{
     margin-left: 8px;
+}
+form button{
+    margin-top: 16px;
+    width: 100%;
+}
+.register-container .content section .img{
+    height: 50%;
+    max-height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
 }

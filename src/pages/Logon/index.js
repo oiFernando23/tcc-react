@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import api from "../../api"
 import './styles.css'; 
+import { useHistory } from 'react-router';
 
 import logoText from "../../assets/logoText.png";
-import logoImg from "../../assets/logoImg.png";
 
 export default function Logon(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
+    const [message, setMessage] = useState('');
 
     async function handleLogin(e){
         e.preventDefault();
@@ -19,10 +21,10 @@ export default function Logon(){
             localStorage.setItem('userEmail', email);
             localStorage.setItem('userPassword', password);
             localStorage.setItem('userName', response.data.name);
-            console.log(response.data.name);
+            history.push('/home');
 
         }catch(err){
-            alert("Falha no login, tente novamente!");
+            setMessage("Erro de login, tente novamente!");
         }
     }
 
@@ -46,6 +48,7 @@ export default function Logon(){
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             ></input>
+                            <span> {message} </span>
                             <button className="button">Entrar</button>
                             <Link className="back-link" to = "/register">
                                 <FiLogIn size={16} color="#000000"  />
@@ -53,7 +56,6 @@ export default function Logon(){
                             </Link>
                         </form>
                     </section>
-                <img src={logoImg} alt="logoImg" style= {{ marginRight : 100 }}/>
                 </div>
             </h1>
         </div>
