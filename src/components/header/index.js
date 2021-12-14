@@ -16,7 +16,7 @@ export default function Header() {
   }
   return (
     <header>
-      <span>Bem vindo!</span>
+      {/* <span>Bem vindo!</span> */}
       <Link className="button" to="/posts/new">
         Faça um post
       </Link>
