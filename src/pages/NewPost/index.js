@@ -27,6 +27,10 @@ export default function NewPost (){
                     <input placeholder='Titulo' />
                     <textarea placeholder="Descrição"/>
                     <input placeholder="Valor"/>
+                    <label for="file-upload" class="custom-file-upload">
+                        Faça upload da imagem
+                    </label>
+                    <input id="file-upload" type="file"/>
                     <button className="button" type="submit">Postar</button>
                 </form>
             </div>
