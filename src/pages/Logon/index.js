@@ -21,6 +21,7 @@ export default function Logon(){
             localStorage.setItem('userEmail', email);
             localStorage.setItem('userPassword', password);
             localStorage.setItem('userName', response.data.name);
+            localStorage.setItem('userId', response.data.id);
             history.push('/home');
 
         }catch(err){

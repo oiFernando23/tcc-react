@@ -1,6 +1,8 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+
+import api from "../../api"
 
 import './styles.css';
 
@@ -8,6 +10,24 @@ import logoText from "../../assets/logoText.png";
 
 
 export default function NewPost (){
+    const history = useHistory();
+    const [description, setDescription] = useState('');
+    const [image, setImage] = useState('');
+    const [value, setValue] = useState('');
+
+    async function handlePost(e){
+        e.preventDefault();
+
+        try{
+            const userId = localStorage.getItem('userId');
+            const response = await api.post('newPost', {description, image, value, userId});
+            history.push('/home');
+
+        }catch(err){
+            console.log(err);
+        }
+    }
+
     return(
              <div className="new-post-container">
             <div className="content">
@@ -22,15 +42,21 @@ export default function NewPost (){
                     </Link>
                 </section>
 
-                <form>
+                <form onSubmit={handlePost}>
                     {/* Colocar a imagem aqui! */}
-                    <input placeholder='Titulo' />
-                    <textarea placeholder="Descrição"/>
-                    <input placeholder="Valor"/>
-                    <label for="file-upload" class="custom-file-upload">
+                    <textarea placeholder="Descrição"
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}/>
+
+                    <input placeholder="Valor"
+                    value={value}
+                    onChange={e => setValue(e.target.value)}/>
+
+                    <label for="file-upload" className="custom-file-upload">
                         Faça upload da imagem
                     </label>
                     <input id="file-upload" type="file"/>
+
                     <button className="button" type="submit">Postar</button>
                 </form>
             </div>

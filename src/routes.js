@@ -15,8 +15,6 @@ export default function Routes(){
                 <Route path="/register" component={Register} />
                 <Route path="/home" component={Home} />
                 <Route path="/posts/new" component={NewPost} />
-
-
             </Switch>
         </BrowserRouter>
     );
