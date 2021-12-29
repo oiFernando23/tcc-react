@@ -12,19 +12,27 @@ import logoText from "../../assets/logoText.png";
 export default function NewPost (){
     const history = useHistory();
     const [description, setDescription] = useState('');
-    const [image, setImage] = useState('');
+    const [file, setFile] = useState('');
     const [value, setValue] = useState('');
 
     async function handlePost(e){
         e.preventDefault();
 
-        try{
-            const userId = localStorage.getItem('userId');
-            const response = await api.post('newPost', {description, image, value, userId});
-            history.push('/home');
+        const userId = localStorage.getItem('userId');
+        const data = new FormData();
+        
+        data.append('file', file)
+        data.append('description', description)
+        data.append('value', value)
+        data.append('userId', userId)
 
+        try{
+            await api.post('posts.create', data)
+            alert('Post cadastrado');
+            history.push('/home');
         }catch(err){
             console.log(err);
+            alert("Algo deu errado")
         }
     }
 
@@ -42,7 +50,7 @@ export default function NewPost (){
                     </Link>
                 </section>
 
-                <form onSubmit={handlePost}>
+                <form onSubmit={handlePost} encType="multipart/form-data">
                     {/* Colocar a imagem aqui! */}
                     <textarea placeholder="Descrição"
                     value={description}
@@ -52,11 +60,11 @@ export default function NewPost (){
                     value={value}
                     onChange={e => setValue(e.target.value)}/>
 
-                    <label for="file-upload" className="custom-file-upload">
+                    <label htmlFor="file-upload" className="custom-file-upload">
                         Faça upload da imagem
                     </label>
-                    <input id="file-upload" type="file"/>
-
+                    <input type="file" name="file" accept="image/png, image/jpeg, image/pjpeg, image/jpg" id="file-upload" onChange={ (e) => setFile(e.target.files[0]) }/>
+                    {file.name}
                     <button className="button" type="submit">Postar</button>
                 </form>
             </div>
