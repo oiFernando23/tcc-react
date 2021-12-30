@@ -10,20 +10,20 @@ export default function Sidebar() {
        <img src={logoTxt} alt="MyBodyMyArt" />
       <ul className="menu">
       <div>
-        <Link to="#">
+        <Link to="/home">
           <li className="menu-item">
             <FiHome size={15} />
             <span>Home</span>
           </li>
         </Link>
-        <Link to="#">
+        <Link to="/profile">
           <li className="menu-item">
             <FiUser size={15} />
             <span>Meu perfil</span>
           </li>
         </Link>
       </div>
-        <Link to="#">
+        <Link to="/config">
           <li className="menu-item">
             <FiSettings size={15} />
             <span>Configurações</span>

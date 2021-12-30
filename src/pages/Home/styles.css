@@ -40,7 +40,7 @@
     border-color: #999;
 }
 .posts ul{
-    display: grid;
+    display: block;
     list-style: none;
 }
 .posts ul li{
@@ -48,10 +48,16 @@
     padding: 24px;
     border-radius: 8px;
     position: relative;
+    border: #999 solid 1px;
+    object-fit: scale-down;
+    display: flex;
 }
 .posts ul li strong{
-    display: block;
+    /* display: inline; */
     margin-bottom: 4px;
     margin-top: 4px;
-    color: #41414d
+    color: #41414d;
+}
+.posts li + li{
+    margin-top: 16px
 }

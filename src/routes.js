@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Logon from './pages/Logon';
 import Register from './pages/Register';
 import NewPost from './pages/NewPost';
+import Profile from './pages/Profile';
 
 
 export default function Routes(){
@@ -15,6 +16,7 @@ export default function Routes(){
                 <Route path="/register" component={Register} />
                 <Route path="/home" component={Home} />
                 <Route path="/posts/new" component={NewPost} />
+                <Route path="/profile" component={Profile} />
             </Switch>
         </BrowserRouter>
     );
