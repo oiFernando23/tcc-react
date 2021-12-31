@@ -4,10 +4,25 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import api from "../../api"
 import Default from '../../components/default';
 
+
 import './styles.css';
 
 export default function Profile (){
-   
+    
+    async function hangleDeletePost(id){
+        try{
+            await api.delete(`posts.delete/${id}`);
+            user.posts.map((post)=>{
+                if(post.id == id){
+                    user.posts.splice(user.posts.indexOf(post), 1)
+                }
+            })
+        }catch(err){
+            alert('Erro ao deletar o post.');
+        }
+    }
+
+
     const [user, setUser] = useState([]);
 
     useEffect(()=>{
@@ -39,6 +54,7 @@ export default function Profile (){
                                 <img src={post.image !== ''? post.image : 'https://mrconfeccoes.com.br/wp-content/uploads/2018/03/default.jpg'} style={{width: '500px', marginBottom: '20px', height: '100%'}}></img>
 
                                 <div style={{padding: '8px'}}>
+                                    <p><button onClick={()=>hangleDeletePost(post.id)}>Deletar</button></p>
                                     <p><strong>DESCRIÇÃO: </strong>{post.description}</p>
                                     <p><strong>VALOR: </strong>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(post.value)}</p>
                                     

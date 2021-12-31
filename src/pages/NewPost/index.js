@@ -19,12 +19,13 @@ export default function NewPost (){
         e.preventDefault();
 
         const userId = localStorage.getItem('userId');
+        const userName = localStorage.getItem('userName');
         const data = new FormData();
-        
         data.append('file', file)
         data.append('description', description)
         data.append('value', value)
         data.append('userId', userId)
+        data.append('userName', userName)
 
         try{
             await api.post('posts.create', data)

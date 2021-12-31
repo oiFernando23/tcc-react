@@ -4,6 +4,7 @@ import "./styles.css";
 import api from "../../api"
 
 import Default from "../../components/default";
+import userEvent from "@testing-library/user-event";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -27,8 +28,8 @@ export default function Home() {
                   <img src={post.image !== ''? post.image : 'https://mrconfeccoes.com.br/wp-content/uploads/2018/03/default.jpg'} style={{width: '500px', marginBottom: '20px', height: '100%'}}></img>
 
                   <div style={{padding: '8px'}}>
-                  <p><strong>DESCRIÇÃO: </strong>{post.description}</p>
-                  <p><strong>VALOR: </strong>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(post.value)}</p>
+                  <p><strong>{post.userName} - </strong>{post.description}</p>
+                  <p><strong>Valor: </strong>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(post.value)}</p>
                   </div>
               </li>
             )}
