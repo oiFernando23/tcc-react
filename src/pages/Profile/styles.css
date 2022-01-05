@@ -1,14 +1,17 @@
+/*Profile*/
+
 .profile-container{
-    border-bottom: 1px slategrey solid;
-    width: 100%;
+    /* border-bottom: 1px slategrey solid; */
+    width: 50%;
     max-width: 1180px;
     padding: 0 30px;
     margin: 32px auto;
     display: flex;
+    border-bottom: 1px solid black;
 }   
 .profile-container div{
-    padding: 120px;
-    border: 1px black solid;
+    padding: 15px;
+    /* border: 1px black solid; */
 }
 .profile-container div.userData{
     /* border: 1px solid black; */
@@ -17,12 +20,22 @@
     align-items: left;
     text-align: start;
 }
+.profile-container div.userData p{
+    padding: 5px;
+    text-align: center;
+    color: rgb(107, 107, 107);
+}
+.profile-container .userRate{
+    height: 50px;
+    padding: 5px;
+}
+
+.profile-container .userRate .rating{
+    text-align: center;
+}
 
 
-
-
-
-
+/*Posts*/
 
 .profile-container-posts{
     width: 100%;
@@ -36,13 +49,18 @@
 }
 .profile-container-posts ul li{
     background: #FFF;
-    padding: 24px;
+    padding: 12px;
     border-radius: 8px;
     position: relative;
     border: #999 solid 1px;
     object-fit: scale-down;
     display: flex;
+    background-color: rgb(252, 252, 252);
 }
+.profile-container-posts ul li p{
+    padding: 20px;
+}
+
 .profile-container-posts ul li strong{
     /* display: inline; */
     margin-bottom: 4px;
@@ -51,4 +69,37 @@
 }
 .profile-container-posts li + li{
     margin-top: 16px
+}
+.profile-container-posts ul li button{
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+}
+.profile-container-posts ul li img{
+    border-radius: 5px;
+}
+
+#pop{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #FFF;
+    z-index: 100;
+    transform: translateX(-50%);
+    /* display: flex; */
+    flex-direction: column;
+    padding: 60px;
+    justify-content: space-between;
+    display: none;
+}
+.pop-active{
+    display: flex !important;
+}
+.rating{
+    cursor: pointer;
 }

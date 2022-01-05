@@ -32,3 +32,9 @@ header button {
 header button:hover {
   border-color: #999;
 }
+header div form input{
+  background: #FFF;
+}
+header div form{
+  display: flex;
+}
