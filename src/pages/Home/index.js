@@ -4,7 +4,6 @@ import "./styles.css";
 import api from "../../api"
 
 import Default from "../../components/default";
-import userEvent from "@testing-library/user-event";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);

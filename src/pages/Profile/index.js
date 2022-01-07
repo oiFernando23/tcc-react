@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { FiUser, FiPhone, FiHome, FiTrash2 } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 

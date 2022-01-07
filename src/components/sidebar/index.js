@@ -1,6 +1,6 @@
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { FiUser, FiHome, FiSettings } from "react-icons/fi";
+import { FiUser, FiHome } from "react-icons/fi";
 import logoTxt from "../../assets/logoText.png";
 
 
