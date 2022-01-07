@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }from "react";
 import { Link } from "react-router-dom";
 import { FiPower } from "react-icons/fi";
 import { useHistory } from "react-router";
@@ -6,8 +6,6 @@ import api from "../../api"
 
 
 import "./styles.css";
-import { useState } from "react/cjs/react.development";
-
 export default function Header() {
   const history = useHistory();
   const [userName, setUserName] = useState('');
