@@ -27,7 +27,7 @@ export default function Home() {
                   <img src={post.image !== ''? post.image : 'https://mrconfeccoes.com.br/wp-content/uploads/2018/03/default.jpg'} style={{width: '500px', marginBottom: '20px', height: '100%'}}></img>
 
                   <div style={{padding: '8px'}}>
-                  <p><strong>{post.email} - </strong>{post.description}</p>
+                  <p><strong>{post.userName} - </strong>{post.description}</p>
                   <p><strong>Valor: </strong>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(post.value)}</p>
                   </div>
               </li>
