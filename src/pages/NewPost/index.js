@@ -29,11 +29,11 @@ export default function NewPost (){
 
         try{
             await api.post('posts.create', data)
-            alert('Post cadastrado');
+            // alert('Post cadastrado');
             history.push('/home');
         }catch(err){
             console.log(err);
-            alert("Algo deu errado")
+            // alert("Algo deu errado")
         }
     }
 

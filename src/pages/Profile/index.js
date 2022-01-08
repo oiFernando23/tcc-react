@@ -30,7 +30,8 @@ export default function Profile (){
             await api.delete(`posts.delete/${id}`);
 
         }catch(err){
-            alert('Erro ao deletar o post.');
+            console.log(err)
+            // alert('Erro ao deletar o post.');
         }
     }
 

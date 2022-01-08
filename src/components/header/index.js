@@ -16,7 +16,8 @@ export default function Header() {
         const idSearch = await api.get(`/users.search/${userName}`);        
         history.push(`/profile/${idSearch.data}`)
     } catch (err) {
-        alert("Oops, algo deu errado")
+        // alert("Oops, algo deu errado")
+        console.log(err)
     }
 }
 

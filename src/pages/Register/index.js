@@ -21,10 +21,10 @@ export default function Register() {
         e.preventDefault();
         try {
             await api.post('/users.create', { name, email, phone, password, cidade, estado });
-            alert("Usuário cadastrado")
             history.push('/');
         } catch (err) {
-            alert("Oops, algo deu errado")
+            console.log(err)
+            // alert("Oops, algo deu errado")
         }
     }
 
