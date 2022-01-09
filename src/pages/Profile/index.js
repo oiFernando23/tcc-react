@@ -18,6 +18,7 @@ export default function Profile (){
 
     async function sendRate(){
         try{
+            history.push('/home');
             await api.post(`/users.rate/${id}`, {rate})          
         }catch(err){
             alert(err)
